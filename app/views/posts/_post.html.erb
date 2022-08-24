@@ -1,9 +1,15 @@
 <li>
     <div class="post">
         <div><%= post.title %></div>
-        <div><%= post.user.name if user_signed_in? %></div>
+
+        <% if user_signed_in? %>
+            <div><%= render "post_author", post: post %></div>
+        <% end %>
+        
         <div><%= post.created_at.strftime("%B %d %Y") %></div>
+        
         <div><%= post.body %></div>
+        
         <div><%= link_to "Show", post %></div>
     </div>
 </li>
