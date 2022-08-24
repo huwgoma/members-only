@@ -1,2 +1,10 @@
 <h1>New Post</h1>
+
+<h2><%= "Errors:" unless @post.errors.empty? %></h2>
+<ul>
+    <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+</ul>
+
 <%= render "post_form", post: @post %>
