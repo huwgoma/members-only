@@ -1,8 +1,6 @@
 <h1>Title: <%= @post.title %></h1>
 
-<% if user_signed_in? %>
-    <p>Author: <%= @post.user.name %></p>
-<% end %>
+<p>Author: <%= @post.user.name if user_signed_in? %></p>
 
 <p>Body: <%= @post.body %></p>
 
