@@ -2,9 +2,7 @@
     <div class="post">
         <div><%= post.title %></div>
 
-        <% if user_signed_in? %>
-            <div><%= render "post_author", post: post %></div>
-        <% end %>
+        <div>Written by <%= render "post_author", post: post %></div>        
         
         <div><%= post.created_at.strftime("%B %d %Y") %></div>
         
