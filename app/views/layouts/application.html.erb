@@ -10,11 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="w-full">
+  <body class="w-full bg-slate-100">
     <header>
       <%= render "layouts/header" %>
     </header>
-    <div class="container">
+
+    <div class="container px-10">
       
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>

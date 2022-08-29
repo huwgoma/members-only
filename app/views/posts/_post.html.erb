@@ -1,13 +1,11 @@
-<li>
-    <div class="post">
-        <div><%= post.title %></div>
+<li class="grid grid-rows-4 grid-cols-[3fr_1fr] items-center bg-white px-2 py-2 mb-5 shadow-lg rounded">
+    <div class="text-lg font-medium"><%= post.title %></div>
 
-        <div>Written by <%= render "post_author", post: post %></div>        
+    <div class="text-sm italic">Written by <%= render "post_author", post: post %></div>        
         
-        <div><%= post.created_at.strftime("%B %d %Y") %></div>
+    <div class="text-sm"><%= post.created_at.strftime("%B %d %Y") %></div>
         
-        <div><%= post.body %></div>
+    <div class="border-t border-gray-900 col-start-1 col-span-2"><%= post.body %></div>
         
-        <div><%= link_to "Show", post %></div>
-    </div>
+    <div class="row-start-1 row-span-3 col-start-2 justify-self-end self-start text-sm"><%= link_to "Show", post %></div>
 </li>
