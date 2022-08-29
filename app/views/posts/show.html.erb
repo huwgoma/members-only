@@ -1,9 +1,7 @@
-<div class="pt-[44px]">
-    <h1 class="text-2xl pb-2">Title: <%= @post.title %></h1>
+<h1 class="pb-2">Title: <%= @post.title %></h1>
     
-    <p class="text-sm italic pb-2">Written by <%= render "post_author", post: @post %></p>
+<p class="text-sm italic pb-2">Written by <%= render "post_author", post: @post %></p>
     
-    <p class="py-2 px-2 border border-gray-900 rounded"><%= @post.body %></p>
+<p class="py-2 px-2 border border-gray-900 rounded"><%= @post.body %></p>
     
-    <%= link_to "Back to Home", posts_path, class: "pb-2 text-sm" %>
-</div>
+<%= link_to "Back to Home", posts_path, class: "pb-2 text-sm" %>
