@@ -1,6 +1,9 @@
-<h1>Title: <%= @post.title %></h1>
-
-<p>Author: <%= render "post_author", post: @post %></p>
-
-<p>Body: <%= @post.body %></p>
-
+<div class="pt-[44px]">
+    <h1 class="text-2xl pb-2">Title: <%= @post.title %></h1>
+    
+    <p class="text-sm italic pb-2">Written by <%= render "post_author", post: @post %></p>
+    
+    <p class="py-2 px-2 border border-gray-900 rounded"><%= @post.body %></p>
+    
+    <%= link_to "Back to Home", posts_path, class: "pb-2 text-sm" %>
+</div>
