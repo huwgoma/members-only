@@ -30,4 +30,10 @@
         @apply text-sky-500 border border-sky-500 rounded cursor-pointer px-4 py-2 font-semibold
             hover:text-white hover:bg-sky-500 ease-linear transition-all duration-150;
     }
+
+    /* Form Errors */
+    .field_with_errors input,
+    .field_with_errors textarea {
+        @apply border-2 border-red-500 rounded focus:border-red-500;
+    }
 }
