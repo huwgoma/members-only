@@ -16,13 +16,13 @@
     </header>
 
     <div class="container px-10">
-      
       <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
+        <div class="bg-green-300 my-2 p-2 rounded"><%= notice %></div>
       <% end %>
       <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
+        <div class="bg-rose-300 my-2 p-2 rounded"><%= alert %></div>
       <% end %>
+
       <%= yield %>
     </div>
   </body>
