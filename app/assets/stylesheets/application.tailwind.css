@@ -18,5 +18,16 @@
         @apply text-sky-500 hover:text-sky-900;
     }
 
+    /* Form Components */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        @apply border border-gray-600 rounded p-1 text-sm resize;
+    }
 
+    input[type="submit"] {
+        @apply text-sky-500 border border-sky-500 rounded cursor-pointer px-4 py-2 font-semibold
+            hover:text-white hover:bg-sky-500 ease-linear transition-all duration-150;
+    }
 }

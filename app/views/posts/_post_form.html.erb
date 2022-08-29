@@ -1,10 +1,10 @@
-<%= form_with model: post do |form| %>
-    <div>
-        <%= form.label :title, "Post Title:" %>
+<%= form_with model: post, class: "flex flex-col w-6/12 gap-2" do |form| %>
+    <div class="flex flex-col">
+        <%= form.label :title, "Title:" %>
         <%= form.text_field :title %>
     </div>
 
-    <div>
+    <div class="flex flex-col">
         <%= form.label :body, "Post Body:" %>
         <%= form.text_area :body, size: "50x10" %>
     </div>
