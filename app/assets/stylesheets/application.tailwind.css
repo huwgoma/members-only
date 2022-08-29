@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    header a, 
+    header button {
+        @apply text-white hover:text-black font-semibold;
+    }
+}

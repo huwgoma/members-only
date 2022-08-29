@@ -10,19 +10,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container mx-auto px-5 py-5">
+  <body class="w-full">
     <header>
       <%= render "layouts/header" %>
     </header>
-
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
+    <div class="container">
+      
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
