@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_user_match, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -26,10 +27,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = current_user.posts.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "You do not have permission to edit this post!"
-    redirect_to post_path
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -54,5 +52,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  # The resource being edited or deleted must belong to the current user
+  def require_user_match
+    current_user.posts.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "You do not have permission to #{action_name} this post!"
+    redirect_to post_path
   end
 end
