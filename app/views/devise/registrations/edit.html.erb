@@ -1,11 +1,11 @@
 <h1>Edit <%= resource_name.to_s.humanize %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "w-6/12" }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "user-form w-6/12" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="flex flex-col">
     <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-6/12 min-w-[200px]" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,12 +14,12 @@
 
   <div class="flex flex-col">
     <%= f.label :name %>
-    <%= f.text_field :name, class: "w-6/12 min-w-[200px]" %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="flex flex-col">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
-    <%= f.password_field :password, autocomplete: "new-password", class: "w-6/12 min-w-[200px]" %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
@@ -28,12 +28,12 @@
 
   <div class="flex flex-col">
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-6/12 min-w-[200px]" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="flex flex-col">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "w-6/12 min-w-[200px]" %>
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div>

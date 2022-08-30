@@ -36,6 +36,13 @@
             hover:text-white hover:bg-sky-500 ease-linear transition-all duration-150;
     }
 
+    /* User Form Inputs are different than Post Form Inputs */
+    .user-form input[type="text"],
+    .user-form input[type="email"],
+    .user-form input[type="password"] {
+        @apply w-6/12 min-w-[200px]
+    }
+
     /* Form Errors */
     .field_with_errors input,
     .field_with_errors textarea {
