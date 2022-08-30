@@ -1,6 +1,8 @@
 <h1 class="pb-2">Title: <%= @post.title %></h1>
     
 <p class="text-sm italic pb-2">Written by <%= render "post_author", post: @post %></p>
+
+<p class="text-sm italic pb-2"><%= render "post_date", post: @post %></p>
     
 <p class="py-2 px-2 border border-gray-900 rounded"><%= @post.body %></p>
 

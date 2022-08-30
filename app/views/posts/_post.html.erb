@@ -3,7 +3,7 @@
 
     <div class="text-sm italic">Written by <%= render "post_author", post: post %></div>        
         
-    <div class="text-sm"><%= post.created_at.strftime("%B %d %Y") %></div>
+    <div class="text-sm"><%= render "post_date", post: post %></div>
         
     <div class="border-t border-gray-900 col-start-1 col-span-2"><%= post.body %></div>
         
