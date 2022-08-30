@@ -3,5 +3,7 @@
 <p class="text-sm italic pb-2">Written by <%= render "post_author", post: @post %></p>
     
 <p class="py-2 px-2 border border-gray-900 rounded"><%= @post.body %></p>
+
+<%= render "post_edit_link", post: @post %>
     
 <%= link_to "Back to Home", posts_path, class: "pb-2 text-sm" %>
