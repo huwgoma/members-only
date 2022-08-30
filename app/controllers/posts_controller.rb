@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @posts = Post.all
@@ -22,6 +22,13 @@ class PostsController < ApplicationController
 
   def show 
     @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = current_user.posts.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "You do not have permission to edit this post!"
+    redirect_to post_path
   end
 
   private 
