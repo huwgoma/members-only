@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
+      flash[:notice] = "Post successfully created."
       redirect_to @post
     else
       render :new, status: :unprocessable_entity
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
+      flash[:notice] = "Post successfully updated."
       redirect_to @post
     else
       render :edit, status: :unprocessable_entity
