@@ -18,6 +18,11 @@
         @apply text-sky-500 hover:text-sky-900;
     }
 
+    /* Form */
+    .container form {
+        @apply flex flex-col gap-2;
+    }
+    
     /* Form Components */
     input[type="text"],
     input[type="email"],
