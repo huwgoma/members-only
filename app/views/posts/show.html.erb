@@ -6,9 +6,12 @@
     
 <p class="py-2 px-2 border border-gray-900 rounded"><%= @post.body %></p>
 
-<%= render "post_edit_link", post: @post %>
+<div class="flex gap-2 mt-1">
+    <%= render "post_edit_link", post: @post %> 
+    <%= render "post_delete_button", post: @post %>
+</div>
 
-<%= button_to "Delete Post", @post, 
-    form: { data: { turbo_confirm: "Are you sure you would like to delete this post?" } }, method: :delete %>
+
+
     
 <%= link_to "Back to Home", posts_path, class: "pb-2 text-sm" %>
